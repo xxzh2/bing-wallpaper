@@ -1,0 +1,29 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>示例-文件下载</title>
+<link rel="stylesheet" type="text/css" href="../static/css/default.css">
+<script type="text/javascript" src="../static/js/load.js"></script>
+</head>
+<body>
+	<div class="container">
+		<h2>文件下载</h2>
+		<form id="dl-form" action="" method="post">
+			<p>
+				<span>分享码：</span>
+				<input type="text" name="s" value="f2B19e" placeholder="分享码">
+				<input type="button" value="下载" onclick="download()">
+			</p>
+			<p>
+				
+			</p>
+		</form>
+		<p>
+			<a>HTTP下载</a>
+			<div>http://<i>&lt;host:port&gt;</i>/fms/download?s=<i>&lt;shareId&gt;</i></div>
+		</p>
+		<div id="dl-result"/>
+	</div>
+	
+</body>
+</html>

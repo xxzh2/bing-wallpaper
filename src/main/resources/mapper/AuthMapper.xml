@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ginkgo.fms.mvc.dao.AuthMapper">
+	<resultMap id="authEntity" type="com.ginkgo.fms.mvc.model.AuthEntity">
+		<result property="id" column="id" />
+		<result property="appId" column="app_id" />
+		<result property="appKey" column="app_key" />
+		<result property="appInfo" column="app_info" />
+	</resultMap>
+	
+	<select id="getAuthAll" resultMap="authEntity" resultType="com.ginkgo.fms.mvc.model.AuthEntity">
+		select * from fms_app_auth;
+	</select>
+</mapper>

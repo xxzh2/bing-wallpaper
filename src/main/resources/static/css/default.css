@@ -1,0 +1,7 @@
+.container {margin: auto;width: 70vw;}
+input{border: 1px solid #ecc;min-width: 120px}
+input[type=file], input[type=text]{min-width: 250px}
+i {color: #c613b1;}
+a {color: #1381c6; font-size: 0.9em}
+span.title {min-width: 80px; display: inline-block; text-align: left;}
+.options{padding-left: 80px}

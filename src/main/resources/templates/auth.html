@@ -1,0 +1,25 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>示例-认证</title>
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<script type="text/javascript" src="js/load.js"></script>
+</head>
+<body>
+	<div class="container">
+		<h2>认证</h2>
+		<form id="auth-form" action="" method="post" enctype="multipart/form-data">
+			<p>
+				<span class="title">用户</span><input type="text" name="user" value="admin">
+			</p>
+			<p>
+				<span class="title">密码</span><input type="text" name="passwd" value="123456">
+			</p>
+			<p class="options">
+				<input type="button" value="获取key" class="btn-auth" onclick="auth()">
+			</p>
+		</form>
+		<div id="auth-key"/>
+	</div>
+</body>
+</html>

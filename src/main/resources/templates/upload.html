@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>示例-文件上传</title>
+<script type="text/javascript" src="../static/syntax/scripts/shCore.js"></script>
+<script type="text/javascript" src="../static/syntax/scripts/shBrushJScript.js"></script>
+<link type="text/css" rel="stylesheet" href="../static/syntax/styles/shCoreDefault.css"/>
+<link type="text/css" rel="stylesheet" href="../static/syntax/styles/shCoreEmacs.css"/>
+
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+
+<link rel="stylesheet" type="text/css" href="../static/css/default.css">
+<script type="text/javascript" src="../static/js/load.js"></script>
+</head>
+<body>
+	<div class="container">
+		<h2>文件上传</h2>
+		<form id="ul-form" action="" method="post" enctype="multipart/form-data">
+			<p>
+				<span class="title">选择文件</span><input type="file" name="files" multiple="multiple">
+			</p>
+			<p>
+				<span class="title">授权码</span><input type="text" name="auth" value="f2B19e6f80Ef65f724a4">
+			</p>
+			<p class="options">
+				<input type="button" value="上传" onclick="upload()">
+			</p>
+		</form>
+		<div style="font-size: smaller">
+		<pre class="brush: js;">
+		{
+			"code" : "0",
+			"message" : "操作成功",
+			"data" : [{
+					"id" : 5,
+					"name" : "1543025006321.jpg",
+					"type" : "A",
+					"sha1" : "757c26e78f857ddb4bb3594dec54aa1a4442aeae",
+					"size" : 126765,
+					"owner" : "default",
+					"path" : "201811/7388fafb28e9452cacc4e76fc1fcb5da",
+					"share" : "7388fafb28e9452cacc4e76fc1fcb5da",
+					"count" : 0,
+					"exist" : null,
+					"desc" : null,
+					"createDate" : 1543025740357,
+					"updateDate" : null
+				}
+			]
+		}
+		</pre>
+		</div>
+		<div id="result-code" style="word-break:break-all;"/>
+		
+	</div>
+</body>
+</html>
