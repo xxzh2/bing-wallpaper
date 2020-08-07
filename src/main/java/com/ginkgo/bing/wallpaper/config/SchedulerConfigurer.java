@@ -30,7 +30,7 @@ import com.ginkgo.bing.wallpaper.job.TestMonitorJob;
  *
  */
 @Configuration
-@ComponentScan("com.ahorioc.fms.job")
+@ComponentScan("com.ginkgo.bing.wallpaper")
 @PropertySource("classpath:scheduler.properties")
 //@ConditionalOnProperty(name = "quartz.enabled")
 public class SchedulerConfigurer {

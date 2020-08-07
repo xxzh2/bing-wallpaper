@@ -107,7 +107,7 @@ public class UploadController {
 				//
 				return service.saveFile(entity);
 			} catch (Exception e) {
-				e.printStackTrace();
+				log.error("{}", e);
 			}
 		}
 		return null;
@@ -128,7 +128,7 @@ public class UploadController {
 				}
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
+			log.error("{}", e);
 		}
 		Response<List<FileEntity>> resp = null;
 		List<FileEntity> fileEntityList = new ArrayList<FileEntity>();

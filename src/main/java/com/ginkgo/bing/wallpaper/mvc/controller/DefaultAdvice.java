@@ -8,12 +8,15 @@ import org.springframework.web.multipart.MultipartException;
 import com.ginkgo.bing.wallpaper.exception.AuthException;
 import com.ginkgo.bing.wallpaper.util.Response;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * 异常处理
  * 
  * @author Think
  *
  */
+@Slf4j
 @ControllerAdvice
 public class DefaultAdvice {
 
@@ -37,7 +40,7 @@ public class DefaultAdvice {
 		} else {
 			er.setData("");
 		}
-		e.printStackTrace();
+		log.error("{}", e);
 		return er;
 	}
 

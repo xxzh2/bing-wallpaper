@@ -12,6 +12,9 @@ import java.util.zip.CRC32;
 
 import org.apache.commons.codec.digest.DigestUtils;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 public class FileSafeCode {
 	/**
 	 * 计算大文件 md5获取getMD5(); SHA1获取getSha1() CRC32获取 getCRC32()
@@ -83,17 +86,17 @@ public class FileSafeCode {
 			}
 			return crc32.getValue() + "";
 		} catch (FileNotFoundException e) {
-			e.printStackTrace();
+			log.error("{}",e);
 			return null;
 		} catch (IOException e) {
-			e.printStackTrace();
+			log.error("{}",e);
 			return null;
 		} finally {
 			try {
 				if (fileInputStream != null)
 					fileInputStream.close();
 			} catch (IOException e) {
-				e.printStackTrace();
+				log.error("{}",e);
 			}
 		}
 	}
