@@ -5,6 +5,8 @@ import java.util.Date;
 
 import org.junit.Test;
 
+import lombok.extern.log4j.Log4j;
+@Log4j
 public class Rot13 {
 
 	public static String rot13(String args) {
@@ -80,7 +82,7 @@ public class Rot13 {
             // BigInteger函数则将8位的字符串转换成16位hex值，用字符串来表示；得到字符串形式的hash值
             return new BigInteger(1, md.digest()).toString(16);
         } catch (Exception e) {
-           e.printStackTrace();
+           log.error(e);
            return null;
         }
     }

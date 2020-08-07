@@ -42,7 +42,7 @@ public class UploadTest {
 				log.info("上传失败");
 			}
 		} catch (Exception ex) {
-			ex.printStackTrace();
+			log.error("{}", ex);
 		} finally {
 			filePost.releaseConnection();
 		}

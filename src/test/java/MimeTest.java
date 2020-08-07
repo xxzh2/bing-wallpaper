@@ -9,12 +9,13 @@ import org.junit.Test;
 
 import eu.medsea.mimeutil.MimeUtil;
 import eu.medsea.mimeutil.detector.MagicMimeMimeDetector;
+import lombok.extern.log4j.Log4j;
 import net.sf.jmimemagic.Magic;
 import net.sf.jmimemagic.MagicException;
 import net.sf.jmimemagic.MagicMatch;
 import net.sf.jmimemagic.MagicMatchNotFoundException;
 import net.sf.jmimemagic.MagicParseException;
-
+@Log4j
 public class MimeTest {
 
 	String f1 = "D:\\aika.zip";
@@ -37,7 +38,7 @@ public class MimeTest {
 			String type = match.getMimeType();
 			System.out.println(type);
 		} catch (MagicParseException | MagicMatchNotFoundException | MagicException e) {
-			e.printStackTrace();
+			log.error(e);
 		}
 	}
 

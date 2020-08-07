@@ -11,6 +11,9 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.junit.Test;
 
+import lombok.extern.log4j.Log4j;
+
+@Log4j
 public class DownloadTest {
 	static String URL_STR = "http://xp.apache.io:8080/fms/upload/filesUpload";
 
@@ -44,9 +47,9 @@ public class DownloadTest {
 		try {
 			download("http://xp.apache.io:8080/fms/download/ss?f=default.conf", "download.file");
 		} catch (ClientProtocolException e) {
-			e.printStackTrace();
+			log.error(e);
 		} catch (IOException e) {
-			e.printStackTrace();
+			log.error(e);
 		}
 	}
 }

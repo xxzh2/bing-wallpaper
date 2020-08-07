@@ -13,7 +13,7 @@ public class TestMonitorJob implements Job {
 		try {
 			log.debug("-------------->\t\t[Monitor job is running]");
 		} catch (Exception e) {
-			e.printStackTrace();
+			log.error("{}", e);
 		}
 	}
 

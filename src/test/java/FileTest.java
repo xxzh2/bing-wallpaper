@@ -5,6 +5,8 @@ import java.util.Date;
 
 import org.junit.Test;
 
+import lombok.extern.log4j.Log4j;
+@Log4j
 public class FileTest {
 
 	String filePath = new File(System.getProperty("user.home"), "test").getPath();
@@ -26,7 +28,7 @@ public class FileTest {
 			File dist = new File(f.getParent(), "dist.file");
 			Files.copy(f.toPath(), dist.toPath());
 		} catch (OutOfMemoryError e) {
-			e.printStackTrace();
+			log.error(e);
 		}
 
 		System.out.println(f.delete());
