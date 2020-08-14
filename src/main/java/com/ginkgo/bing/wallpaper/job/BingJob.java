@@ -15,7 +15,7 @@ public class BingJob implements Job {
 	 * 检测文件store是否存在
 	 */
 	public void runTask() {
-		log.debug(String.format(">> Start BingPicture "));
+		log.debug("{}", ">> Start BingPicture ");
 		BingPicture pic = new BingPicture();
 		// 设置URL
 		pic.setUrl("https://cn.bing.com");
@@ -23,7 +23,7 @@ public class BingJob implements Job {
 		
 		// 搜索并下载
 		pic.download();
-		log.debug(String.format("<< Check is complete."));
+		log.debug("{}", "<< Check is complete.");
 	}
 
 	@Override
