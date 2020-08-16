@@ -9,6 +9,7 @@ import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import lombok.extern.log4j.Log4j;
@@ -43,6 +44,7 @@ public class DownloadTest {
 	}
 
 	@Test
+	@Ignore
 	public void main() {
 		try {
 			download("http://xp.apache.io:8080/fms/download/ss?f=default.conf", "download.file");
