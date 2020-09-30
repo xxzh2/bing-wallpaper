@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?> 
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.ginkgo.fms.mvc.dao.FileMapper">
-	<resultMap id="fileEntity" type="com.ginkgo.fms.mvc.model.FileEntity">
+<mapper namespace="com.ginkgo.bing.wallpaper.mvc.dao.FileMapper">
+	<resultMap id="fileEntity" type="com.ginkgo.bing.wallpaper.mvc.model.FileEntity">
 		<result property="id" column="id" />
 		<result property="name" column="name" />
 		<result property="type" column="type" />
@@ -17,37 +17,37 @@
 		<result property="updateDate" column="update_date" />
 	</resultMap>
 
-	<select id="getFileById" parameterType="int" resultMap="fileEntity" resultType="com.ginkgo.fms.mvc.model.FileEntity">
+	<select id="getFileById" parameterType="int" resultMap="fileEntity" resultType="com.ginkgo.bing.wallpaper.mvc.model.FileEntity">
 		select l.*, s.path 
 		  from fms_file_list l
 		  join fms_file_store s on l.sha1 = s.sha1
 		 where id = #{id}
 	</select>
 
-	<select id="getFileByShare" parameterType="String" resultMap="fileEntity" resultType="com.ginkgo.fms.mvc.model.FileEntity">
+	<select id="getFileByShare" parameterType="String" resultMap="fileEntity" resultType="com.ginkgo.bing.wallpaper.mvc.model.FileEntity">
 		select l.*, s.path 
 		  from fms_file_list l 
 		  join fms_file_store s on l.sha1 = s.sha1
 		 where share = #{share}
 	</select>
 
-	<select id="existStore" parameterType="String" resultMap="fileEntity" resultType="com.ginkgo.fms.mvc.model.FileEntity">
+	<select id="existStore" parameterType="String" resultMap="fileEntity" resultType="com.ginkgo.bing.wallpaper.mvc.model.FileEntity">
 		select s.* 
 		  from fms_file_store s
 		 where s.sha1 = #{sha1}
 	</select>
 
-	<insert id="saveStore" parameterType="com.ginkgo.fms.mvc.model.FileEntity">
+	<insert id="saveStore" parameterType="com.ginkgo.bing.wallpaper.mvc.model.FileEntity">
 		insert into fms_file_store (sha1, path, create_date, update_date, exist)
 		values (#{sha1}, #{path}, #{createDate}, #{createDate}, true);
 	</insert>
 
-	<insert id="saveLink" keyProperty="id" useGeneratedKeys="true" parameterType="com.ginkgo.fms.mvc.model.FileEntity">
+	<insert id="saveLink" keyProperty="id" useGeneratedKeys="true" parameterType="com.ginkgo.bing.wallpaper.mvc.model.FileEntity">
 		insert into fms_file_list (name, sha1, owner, share, type, size, create_date)
 		values (#{name}, #{sha1}, #{owner}, #{share}, #{type}, #{size}, #{createDate});
 	</insert>
 
-	<insert id="updateCount" parameterType="com.ginkgo.fms.mvc.model.FileEntity">
+	<insert id="updateCount" parameterType="com.ginkgo.bing.wallpaper.mvc.model.FileEntity">
 		update fms_file_list set count = ifnull(count, 0) + 1
 		 where share = #{share};
 	</insert>

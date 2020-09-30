@@ -5,6 +5,7 @@ import javax.sql.DataSource;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.SqlSessionTemplate;
+import org.mybatis.spring.mapper.MapperScannerConfigurer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
@@ -14,7 +15,7 @@ import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 
 import com.ginkgo.bing.wallpaper.mvc.dao.Mapper;
 
-//@Configuration
+@Configuration
 public class ContextConfigurer  {
 
 	public final static String MAPPER_BASE_PACKAGE = Mapper.class.getPackage().getName();
@@ -39,13 +40,13 @@ public class ContextConfigurer  {
 		return new org.mybatis.spring.SqlSessionTemplate(sessionFactory);
 	}
 
-//	@Bean
-//	public static MapperScannerConfigurer MapperScannerConfigurer() {
-//		MapperScannerConfigurer conf = new MapperScannerConfigurer();
-//		conf.setBasePackage(MAPPER_BASE_PACKAGE);
-//		conf.setSqlSessionTemplateBeanName("sqlSessionTemplate");
-//		return conf;
-//	}
+	@Bean
+	public static MapperScannerConfigurer MapperScannerConfigurer() {
+		MapperScannerConfigurer conf = new MapperScannerConfigurer();
+		conf.setBasePackage(MAPPER_BASE_PACKAGE);
+		conf.setSqlSessionTemplateBeanName("sqlSessionTemplate");
+		return conf;
+	}
 
 	@Bean
 	public static DataSourceTransactionManager transactionManager(@Autowired DataSource dataSource) {

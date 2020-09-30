@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?> 
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.ginkgo.fms.mvc.dao.StoreMapper">
-	<resultMap id="fileStore" type="com.ginkgo.fms.mvc.model.FileStore">
+<mapper namespace="com.ginkgo.fms.bing.dao.StoreMapper">
+	<resultMap id="fileStore" type="com.ginkgo.bing.wallpaper.mvc.model.FileStore">
 		<result property="sha1" column="sha1" />
 		<result property="path" column="path" />
 		<result property="exist" column="exist" />
@@ -10,7 +10,7 @@
 
 	</resultMap>
 
-	<select id="getExpiredStore" parameterType="Date" resultMap="fileStore" resultType="com.ginkgo.fms.mvc.model.FileStore">
+	<select id="getExpiredStore" parameterType="Date" resultMap="fileStore" resultType="com.ginkgo.bing.wallpaper.mvc.model.FileStore">
 		select s.* 
 		  from fms_file_store s
 		 where s.update_date <![CDATA[ < ]]> #{updateDate}
